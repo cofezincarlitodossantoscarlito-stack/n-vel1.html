@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>TEA Nível 1 – Avaliação Informativa</title>
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: #fff;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 30px;
+}
+
+.card {
+    background: rgba(255,255,255,0.12);
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+h1 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 28px;
+    margin-top: 30px;
+    color: #ffd700;
+}
+
+p {
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+.highlight {
+    color: #00ffcc;
+    font-weight: bold;
+}
+
+.question {
+    margin-top: 20px;
+    font-size: 22px;
+}
+
+button {
+    margin-top: 15px;
+    padding: 12px 20px;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.btn-yes {
+    background-color: #00c853;
+    color: #fff;
+}
+
+.btn-no {
+    background-color: #d50000;
+    color: #fff;
+}
+
+.btn-calc {
+    background-color: #ffd700;
+    color: #000;
+    font-weight: bold;
+}
+
+.result {
+    font-size: 26px;
+    text-align: center;
+    margin-top: 30px;
+    display: none;
+}
+
+.warning {
+    background: rgba(255,0,0,0.2);
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 30px;
+    font-size: 16px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="card">
+        <h1>🧩 TEA – Nível 1</h1>
+
+        <p>
+            O <span class="highlight">Transtorno do Espectro Autista (TEA) – Nível 1</span>
+            é caracterizado por dificuldades leves na comunicação social,
+            comportamentos repetitivos e desafios na adaptação social,
+            porém com maior autonomia no dia a dia.
+        </p>
+
+        <p>
+            Pessoas com TEA nível 1 geralmente conseguem estudar, trabalhar
+            e se comunicar, mas podem apresentar dificuldades em
+            interações sociais, interpretação de emoções e mudanças de rotina.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>📝 Questionário Informativo</h2>
+
+        <div class="question">1️⃣ Você sente dificuldade em interações sociais?</div>
+        <button class="btn-yes" onclick="answer(true)">Sim</button>
+        <button class="btn-no" onclick="answer(false)">Não</button>
+
+        <div class="question">2️⃣ Você prefere rotinas bem definidas?</div>
+        <button class="btn-yes" onclick="answer(true)">Sim</button>
+        <button class="btn-no" onclick="answer(false)">Não</button>
+
+        <div class="question">3️⃣ Sons, luzes ou cheiros te incomodam facilmente?</div>
+        <button class="btn-yes" onclick="answer(true)">Sim</button>
+        <button class="btn-no" onclick="answer(false)">Não</button>
+
+        <div class="question">4️⃣ Você tem interesses muito específicos?</div>
+        <button class="btn-yes" onclick="answer(true)">Sim</button>
+        <button class="btn-no" onclick="answer(false)">Não</button>
+
+        <div class="question">5️⃣ Você sente dificuldade em entender expressões faciais?</div>
+        <button class="btn-yes" onclick="answer(true)">Sim</button>
+        <button class="btn-no" onclick="answer(false)">Não</button>
+
+        <br><br>
+        <button class="btn-calc" onclick="calculate()">📊 Ver Resultado</button>
+
+        <div class="result" id="result"></div>
+    </div>
+
+    <div class="warning">
+        ⚠️ <b>Aviso importante:</b>  
+        Este questionário é apenas <b>informativo</b> e <b>não substitui</b>
+        avaliação médica ou psicológica profissional.
+    </div>
+
+</div>
+
+<script>
+let score = 0;
+let total = 5;
+
+function answer(value) {
+    if (value) score++;
+}
+
+function calculate() {
+    let percent = Math.round((score / total) * 100);
+    let result = document.getElementById("result");
+    result.style.display = "block";
+    result.innerHTML = `
+        🔍 <b>Resultado Informativo</b><br><br>
+        Probabilidade estimada de características
+        relacionadas ao <b>TEA Nível 1</b>:<br><br>
+        <span style="font-size:40px; color:#00ffcc;">${percent}%</span>
+    `;
+}
+</script>
+
+</body>
+</html>
