@@ -7,92 +7,92 @@
 <style>
 body {
     margin: 0;
-    padding: 0;
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
-    color: #fff;
+    background: linear-gradient(135deg, #4b00ff, #00c6ff);
+    color: #ffffff;
 }
 
 .container {
-    max-width: 900px;
+    max-width: 950px;
     margin: auto;
     padding: 30px;
 }
 
 .card {
-    background: rgba(255,255,255,0.12);
-    border-radius: 20px;
+    background: rgba(0,0,0,0.35);
+    border-radius: 22px;
     padding: 30px;
     margin-bottom: 30px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.3);
 }
 
 h1 {
     text-align: center;
-    font-size: 36px;
-    margin-bottom: 20px;
-}
-
-h2 {
-    font-size: 28px;
-    margin-top: 30px;
+    font-size: 40px;
     color: #ffd700;
 }
 
+h2 {
+    font-size: 30px;
+    color: #00ffcc;
+    margin-top: 30px;
+}
+
 p {
-    font-size: 20px;
-    line-height: 1.6;
+    font-size: 22px;
+    line-height: 1.7;
 }
 
 .highlight {
-    color: #00ffcc;
+    color: #ffd700;
     font-weight: bold;
 }
 
 .question {
-    margin-top: 20px;
-    font-size: 22px;
+    font-size: 24px;
+    margin-top: 25px;
 }
 
 button {
-    margin-top: 15px;
-    padding: 12px 20px;
+    padding: 12px 22px;
     font-size: 20px;
     border: none;
-    border-radius: 10px;
+    border-radius: 12px;
+    margin: 10px 10px 0 0;
     cursor: pointer;
-    margin-right: 10px;
 }
 
-.btn-yes {
-    background-color: #00c853;
+.yes {
+    background: #00c853;
     color: #fff;
 }
 
-.btn-no {
-    background-color: #d50000;
+.no {
+    background: #d50000;
     color: #fff;
 }
 
-.btn-calc {
-    background-color: #ffd700;
+.calc {
+    background: #ffd700;
     color: #000;
+    font-size: 24px;
     font-weight: bold;
+    margin-top: 30px;
 }
 
 .result {
-    font-size: 26px;
-    text-align: center;
-    margin-top: 30px;
     display: none;
+    margin-top: 30px;
+    font-size: 30px;
+    text-align: center;
+    color: #00ffcc;
 }
 
 .warning {
-    background: rgba(255,0,0,0.2);
-    padding: 15px;
-    border-radius: 10px;
     margin-top: 30px;
     font-size: 16px;
+    background: rgba(255,0,0,0.25);
+    padding: 15px;
+    border-radius: 12px;
 }
 </style>
 </head>
@@ -101,78 +101,132 @@ button {
 
 <div class="container">
 
-    <div class="card">
-        <h1>🧩 TEA – Nível 1</h1>
+<div class="card">
+<h1>🧩 TEA – Nível 1</h1>
 
-        <p>
-            O <span class="highlight">Transtorno do Espectro Autista (TEA) – Nível 1</span>
-            é caracterizado por dificuldades leves na comunicação social,
-            comportamentos repetitivos e desafios na adaptação social,
-            porém com maior autonomia no dia a dia.
-        </p>
+<p>
+O <span class="highlight">TEA nível 1</span> envolve dificuldades leves
+na comunicação social, sensibilidade sensorial e preferência por rotinas,
+mas com maior independência no dia a dia.
+</p>
 
-        <p>
-            Pessoas com TEA nível 1 geralmente conseguem estudar, trabalhar
-            e se comunicar, mas podem apresentar dificuldades em
-            interações sociais, interpretação de emoções e mudanças de rotina.
-        </p>
-    </div>
-
-    <div class="card">
-        <h2>📝 Questionário Informativo</h2>
-
-        <div class="question">1️⃣ Você sente dificuldade em interações sociais?</div>
-        <button class="btn-yes" onclick="answer(true)">Sim</button>
-        <button class="btn-no" onclick="answer(false)">Não</button>
-
-        <div class="question">2️⃣ Você prefere rotinas bem definidas?</div>
-        <button class="btn-yes" onclick="answer(true)">Sim</button>
-        <button class="btn-no" onclick="answer(false)">Não</button>
-
-        <div class="question">3️⃣ Sons, luzes ou cheiros te incomodam facilmente?</div>
-        <button class="btn-yes" onclick="answer(true)">Sim</button>
-        <button class="btn-no" onclick="answer(false)">Não</button>
-
-        <div class="question">4️⃣ Você tem interesses muito específicos?</div>
-        <button class="btn-yes" onclick="answer(true)">Sim</button>
-        <button class="btn-no" onclick="answer(false)">Não</button>
-
-        <div class="question">5️⃣ Você sente dificuldade em entender expressões faciais?</div>
-        <button class="btn-yes" onclick="answer(true)">Sim</button>
-        <button class="btn-no" onclick="answer(false)">Não</button>
-
-        <br><br>
-        <button class="btn-calc" onclick="calculate()">📊 Ver Resultado</button>
-
-        <div class="result" id="result"></div>
-    </div>
-
-    <div class="warning">
-        ⚠️ <b>Aviso importante:</b>  
-        Este questionário é apenas <b>informativo</b> e <b>não substitui</b>
-        avaliação médica ou psicológica profissional.
-    </div>
-
+<p>
+Este teste é <span class="highlight">informativo</span> e ajuda apenas
+a identificar possíveis características.
+</p>
 </div>
+
+<div class="card">
+<h2>📝 Questionário (20 perguntas)</h2>
 
 <script>
 let score = 0;
-let total = 5;
+let total = 20;
 
 function answer(value) {
     if (value) score++;
 }
+</script>
 
-function calculate() {
+<div class="question">1️⃣ Você sente dificuldade em iniciar conversas?</div>
+<button class="yes" onclick="answer(true)">Sim</button>
+<button class="no" onclick="answer(false)">Não</button>
+
+<div class="question">2️⃣ Você prefere ficar sozinho(a)?</div>
+<button class="yes" onclick="answer(true)">Sim</button>
+<button class="no" onclick="answer(false)">Não</button>
+
+<div class="question">3️⃣ Mudanças de rotina te incomodam?</div>
+<button class="yes" onclick="answer(true)">Sim</button>
+<button class="no" onclick="answer(false)">Não</button>
+
+<div class="question">4️⃣ Sons altos te incomodam facilmente?</div>
+<button class="yes" onclick="answer(true)">Sim</button>
+<button class="no" onclick="answer(false)">Não</button>
+
+<div class="question">5️⃣ Luz forte te incomoda?</div>
+<button class="yes" onclick="answer(true)">Sim</button>
+<button class="no" onclick="answer(false)">Não</button>
+
+<div class="question">6️⃣ Você tem interesses muito específicos?</div>
+<button class="yes" onclick="answer(true)">Sim</button>
+<button class="no" onclick="answer(false)">Não</button>
+
+<div class="question">7️⃣ Você repete palavras ou gestos?</div>
+<button class="yes" onclick="answer(true)">Sim</button>
+<button class="no" onclick="answer(false)">Não</button>
+
+<div class="question">8️⃣ Você evita contato visual?</div>
+<button class="yes" onclick="answer(true)">Sim</button>
+<button class="no" onclick="answer(false)">Não</button>
+
+<div class="question">9️⃣ Você sente dificuldade em entender ironia?</div>
+<button class="yes" onclick="answer(true)">Sim</button>
+<button class="no" onclick="answer(false)">Não</button>
+
+<div class="question">🔟 Você se sente sobrecarregado(a) em ambientes sociais?</div>
+<button class="yes" onclick="answer(true)">Sim</button>
+<button class="no" onclick="answer(false)">Não</button>
+
+<div class="question">1️⃣1️⃣ Você prefere comunicação escrita?</div>
+<button class="yes" onclick="answer(true)">Sim</button>
+<button class="no" onclick="answer(false)">Não</button>
+
+<div class="question">1️⃣2️⃣ Você tem dificuldade em expressar emoções?</div>
+<button class="yes" onclick="answer(true)">Sim</button>
+<button class="no" onclick="answer(false)">Não</button>
+
+<div class="question">1️⃣3️⃣ Você se sente deslocado(a) socialmente?</div>
+<button class="yes" onclick="answer(true)">Sim</button>
+<button class="no" onclick="answer(false)">Não</button>
+
+<div class="question">1️⃣4️⃣ Você prefere previsibilidade?</div>
+<button class="yes" onclick="answer(true)">Sim</button>
+<button class="no" onclick="answer(false)">Não</button>
+
+<div class="question">1️⃣5️⃣ Você se incomoda com texturas?</div>
+<button class="yes" onclick="answer(true)">Sim</button>
+<button class="no" onclick="answer(false)">Não</button>
+
+<div class="question">1️⃣6️⃣ Você se concentra intensamente em um tema?</div>
+<button class="yes" onclick="answer(true)">Sim</button>
+<button class="no" onclick="answer(false)">Não</button>
+
+<div class="question">1️⃣7️⃣ Você evita festas?</div>
+<button class="yes" onclick="answer(true)">Sim</button>
+<button class="no" onclick="answer(false)">Não</button>
+
+<div class="question">1️⃣8️⃣ Você se sente cansado(a) após socializar?</div>
+<button class="yes" onclick="answer(true)">Sim</button>
+<button class="no" onclick="answer(false)">Não</button>
+
+<div class="question">1️⃣9️⃣ Você sente dificuldade em interpretar emoções?</div>
+<button class="yes" onclick="answer(true)">Sim</button>
+<button class="no" onclick="answer(false)">Não</button>
+
+<div class="question">2️⃣0️⃣ Você prefere ambientes calmos?</div>
+<button class="yes" onclick="answer(true)">Sim</button>
+<button class="no" onclick="answer(false)">Não</button>
+
+<br>
+<button class="calc" onclick="calc()">📊 Ver Resultado</button>
+
+<div class="result" id="result"></div>
+
+</div>
+
+<div class="warning">
+⚠️ Este teste é apenas informativo e não substitui avaliação médica.
+</div>
+
+</div>
+
+<script>
+function calc() {
     let percent = Math.round((score / total) * 100);
-    let result = document.getElementById("result");
-    result.style.display = "block";
-    result.innerHTML = `
-        🔍 <b>Resultado Informativo</b><br><br>
-        Probabilidade estimada de características
-        relacionadas ao <b>TEA Nível 1</b>:<br><br>
-        <span style="font-size:40px; color:#00ffcc;">${percent}%</span>
-    `;
+    let r = document.getElementById("result");
+    r.style.display = "block";
+    r.innerHTML = `Probabilidade estimada:<br><span style="font-size:42px;">${percent}%</span>`;
 }
 </script>
 
